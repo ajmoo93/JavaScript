@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<!--ng-app = viktig måste ha samma namn som i angular-->
+<html ng-app="fileApp">
+<head>
+    <title>Laboration 7</title>
+	<meta charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="TypeScript.js"></script>
+    <script src="File.js"></script>
+    <!--Tänk på att kolla så du har rätt script inne.-->
+</head>
+<body>
+    <!--ng-controller för att få fram controllern i angular-->
+    <div ng-controller="fileAppController" >
+
+        
+        <!--ng-click för att kunna framföra functionen i angularjs-->
+        <button type="button" ng-click="theBooks()">ShowBooks</button>
+        <button type="button" ng-click="theMedia()">ShowMedia</button>
+        <ul>
+            <!--MediaArray Viktig, ska va samma namn som i Arrayn-->
+            <li ng-repeat="media in MediaArray">
+                <!--media där uppe samma som här nere eller namnet iallafall
+                    sedan egenskaperna som du har med i Typescript klasserna(CaseSencitive)-->
+                <p>{{media._name}}</p>
+                <p>{{media._category}}</p> 
+                <p>{{media._price}}</p>
+                <p>{{media._artNr}}</p>
+                <p>{{media._year}}</p>
+            </li>
+            
+        </ul>
+        <hr />
+        <ul>
+            <li ng-repeat="book in BookArray">
+                <p>{{media._name}}</p>
+                <p>{{media._category}}</p>
+                <p>{{media._price}}</p>
+                <p>{{media._artNr}}</p>
+                <p>{{media._year}}</p>
+            </li>
+
+        </ul>
+       Name: <input type="text" ng-model="name" />
+        Category: <input type="text" ng-model="category" />
+        Price: <input type="text" ng-model="price" />
+         ArtNr: <input type="text" ng-model="artNr" />
+         Author: <input type="text" ng-model="author" />
+        Year: <input type="text" ng-model="year" />
+        <button type="button" ng-click="addBook()">AddBook</button>
+    </div>
+    <div>
+
+    </div>
+</body>
+</html>

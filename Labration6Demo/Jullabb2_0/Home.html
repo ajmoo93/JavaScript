@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="MediaApp" >
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-route.min.js"> </script>
+    <script src="scripts/MediaController.js"></script>
+</head>
+<body>
+    <div ng-controller="MediaLibController" ng-init="LoggedIn()">
+        <h2>logged in as {{user}}</h2>
+        <input type="text" ng-model="filterList" >
+        <ul>
+            <li ng-repeat="movie in AllMovies | filter: filterList">
+                {{movie.Title}} - {{movie.Year}}
+            </li>
+            
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="App">
+<head>
+    <meta charset="UTF-8" >
+    <title>Laboration Christmas</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="Scripts/HomeController.js"></script>
+    
+</head>
+<body>
+    <div ng-controller="HomeController">
+        Filter Movies: <input type="text" ng-model="filterList">
+        <ul>
+            <li ng-repeat="movie in Movies | filter: filterList">
+                {{movie.Title}}
+            </li>
+        </ul>
+
+    </div>
+
+</body>
+</html>
